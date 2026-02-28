@@ -19,10 +19,10 @@ function Navbar() {
             <li>Read</li>
           </NavLink>
 
-          <NavLink to="/lw" className={handleActive}>
+          <NavLink to="/admin/update-card/:id" className={handleActive}>
             <li>Update</li>
           </NavLink>
-          <NavLink to="/wkw" className={handleActive}>
+          <NavLink to="/admin/delete-cards" className={handleActive}>
             <li>Delete</li>
           </NavLink>
         </ul>

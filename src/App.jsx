@@ -1,21 +1,26 @@
-import CardPage from "./pages/CardsPage";
+import CardsPage from "./pages/CardsPage";
 import HomePage from "./pages/HomePage";
 import CreateCardPage from "./pages/CreateCardPage";
 import List from "./components/List";
 import { BrowserRouter, Routes, Route } from "react-router";
 import ErrorPage from "./pages/ErrorPage";
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
+import DeleteCardsPage from "./pages/DeleteCardsPage";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="bg-neutral-200 w-dvw min-h-dvh flex flex-col items-center justify-center py-10 mb-32">
+      <div className="bg-neutral-200 w-dvw min-h-dvh flex flex-col items-center justify-center py-10">
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/list" element={<List />} />
-          <Route path="/admin/cards" element={<CardPage />} />
+          <Route
+            path="/admin/cards"
+            element={<CardsPage title="User Cards" isDeletePage={false} />}
+          />
           <Route path="/admin/create-card" element={<CreateCardPage />} />
+          <Route path="/admin/delete-cards" element={<DeleteCardsPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
